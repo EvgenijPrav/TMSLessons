@@ -1,6 +1,6 @@
 package com.company;
 
-public class Main {
+public class Lesson2 {
 
     public static void main(String[] args) {
         int first = 99;
