@@ -39,10 +39,10 @@ public class Lesson5 {
     }
 
     public static void stuffWithClasses1() {
-        Person person1 = new Person();
+        com.company.Person person1 = new com.company.Person();
         person1.sayName();
         person1.sayAge();
-        Person person2 = new Person(43, "Adam");
+        com.company.Person person2 = new com.company.Person(43, "Adam");
         person2.age = 76;
         person2.sayName();
         person2.sayAge();
