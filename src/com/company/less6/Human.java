@@ -1,6 +1,6 @@
 package com.company.less6;
 
-public final class Human {
+public class Human {
 
     private final int age;
     private final String name;
