@@ -34,6 +34,27 @@ public class Lesson6 {
         changePersonAge(human);
         System.out.println(human.getAge());
         System.out.println(human.getPhoneNumber());
+
+        boolean kompSgorel = new Random().nextBoolean();
+        boolean domSgorel = new Random().nextBoolean();
+
+        boolean ifTrigger = kompSgorel && !domSgorel || getRandomBoolean();
+        if (ifTrigger) {
+            // true block
+            System.out.println("True block");
+        } else {
+            // false block
+            System.out.println("False block");
+        }
+
+        if (ifTrigger) {
+            // true block
+            System.out.println("True block");
+        }
+    }
+
+    public static boolean getRandomBoolean() {
+        return new Random().nextBoolean();
     }
 
     public static void changePersonAge(Human human) {

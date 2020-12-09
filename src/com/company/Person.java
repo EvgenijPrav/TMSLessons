@@ -1,9 +1,13 @@
 package com.company;
 
+import java.util.Random;
+
 public class Person {
 
     int age;
     String name;
+
+    private Random random = new Random();
 
     public Person() {
         this(25, "Mary");
@@ -26,15 +30,26 @@ public class Person {
     }
 
     public int getAge() {
+        int randNum = random.nextInt();
         return age;
     }
 
 
     public void sayAge() {
+        int anotherRand = random.nextInt();
+        int i = 0;
+        int k = 100;
+        for(; i< 5; i++) {
+            System.out.println(i);
+            System.out.println(k);
+        }
+        i = 10;
+        k = 100;
         System.out.println("My age is " + age);
     }
 
     public void sayName() {
+        Random customRandom = new Random();
         System.out.println("My name is " + name);
     }
 
