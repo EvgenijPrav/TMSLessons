@@ -4,7 +4,9 @@ public class Lesson7 {
 
     public static void main(String[] args) {
 //        innerClasses();
-        nestedStaticClasses();
+//        nestedStaticClasses();
+//        inheritance1();
+        inheritance2();
     }
 
     public static void innerClasses() {
@@ -25,6 +27,33 @@ public class Lesson7 {
         Math.Factorial factorial = new Math.Factorial(10);
         factorial.name = "1234567";
         System.out.println("Factorial of number " + factorial.getInputParam() + " equals to " + factorial.getResult());
+    }
+
+    public static void inheritance1() {
+        Employee employee = new Employee(25, "Tom", 150_000, "Oracle");
+        employee.getEmployeeInfo();
+        employee.getInfo();
+        Human human = new Employee(30, "Mary", 120_000, "Google");
+        human.getInfo();
+        someMethod(human);
+    }
+
+    public static void someMethod(Human human) {
+        if (human instanceof Employee) {
+            Employee employee = (Employee) human;
+            employee.getEmployeeInfo();
+        }
+    }
+
+    public static void inheritance2() {
+        Employee employee = new Employee(25, "Tom", 150_000, "Oracle");
+        Human human = new Employee(30, "Mary", 120_000, "Google");
+        Human human2 = new Employee(30, "Mary", 120_000, "Google");
+        employee.getInfo();
+        human.getInfo();
+        employee.say();
+        employee.getAge();
+        System.out.println(human2.equals(human));
     }
 }
 
