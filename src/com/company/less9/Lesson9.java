@@ -98,8 +98,6 @@ public class Lesson9 {
             }
         }
 
-
-
         if (rocketsCount > 0) {
             System.out.println("Bang!");
             rocketsCount--;
