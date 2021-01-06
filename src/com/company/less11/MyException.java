@@ -7,6 +7,10 @@ public class MyException extends Exception {
         detail = a;
     }
 
+    public int getDetail() {
+        return detail;
+    }
+
     @Override
     public String toString() {
         return "MyException{" +
