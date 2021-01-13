@@ -16,6 +16,10 @@ public class Coin {
         this.diameter = diameter;
     }
 
+    public String getString() throws CoinLogicException {
+        throw new CoinLogicException();
+    }
+
     public double getWeight() {
         return weight;
     }
