@@ -14,7 +14,7 @@ public class Lesson13 {
         }
         System.out.println(values);
 //        ioStreams();
-//        fileReaderAndWriter();
+        fileReaderAndWriter();
 //        bufferedWriterUsage();
 //        bufferedReaderUsage();
 //        files();
@@ -81,11 +81,13 @@ public class Lesson13 {
         try {
             fileReader = new FileReader("Hello.txt");
             fileWriter = new FileWriter("copied.txt");
-
+            StringBuilder str = new StringBuilder();
             int a;
             while ((a = fileReader.read()) != -1) {
                 fileWriter.write(a);
+                str.append((char) a);
             }
+            System.out.println("******" + str);
         } catch (IOException exception) {
             exception.printStackTrace();
         } finally {
@@ -111,7 +113,7 @@ public class Lesson13 {
         File file = new File(dirName);
         file.mkdirs();
         String osIndependentPathName = "java" + File.separator + "Programming" + File.separator + "newDir" + File.separator + "test.txt";
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(osIndependentPathName))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(osIndependentPathName))) {
             String text = "Hello world!\nWe are learning Java!";
             bufferedWriter.write(text);
         } catch (IOException e) {
@@ -120,7 +122,7 @@ public class Lesson13 {
     }
 
     private static void bufferedReaderUsage() {
-        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("notes.txt"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("notes.txt"))) {
             String str;
             while ((str = bufferedReader.readLine()) != null) {
                 System.out.println(str);
@@ -153,7 +155,7 @@ public class Lesson13 {
         }
         String[] pathes = new File("java").list();
         if (pathes != null) {
-            for (String str: pathes) {
+            for (String str : pathes) {
                 System.out.println(str);
             }
         }
@@ -168,7 +170,7 @@ public class Lesson13 {
 
     private static void serialization() {
         Person person = new Person("Nick", 34, true);
-        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("person.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("person.dat"))) {
             oos.writeObject(person);
         } catch (IOException e) {
             e.printStackTrace();
@@ -176,7 +178,7 @@ public class Lesson13 {
     }
 
     private static void deserialization() {
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("person.dat"))) {
             Person person = (Person) ois.readObject();
             System.out.println(person.toString());
         } catch (IOException | ClassNotFoundException e) {

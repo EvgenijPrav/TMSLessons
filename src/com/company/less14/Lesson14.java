@@ -14,7 +14,8 @@ public class Lesson14 {
 //        elementRemoval();
 //        sets();
 //        maps();
-        iterators();
+//        iterators();
+        queues();
     }
 
     private static void iterators() {
@@ -157,4 +158,38 @@ public class Lesson14 {
         System.out.println(set.size());
     }
 
+    private static void queues() {
+        Queue<Integer> queue = new ArrayDeque<>();
+        queue.add(3);
+        System.out.println(queue);
+        System.out.println(queue.element());
+        System.out.println(queue);
+        queue.offer(1);
+        System.out.println(queue);
+        queue.add(2);
+        queue.add(0);
+        queue.add(-1);
+        System.out.println(queue);
+        System.out.println("Peek: " + queue.peek());
+        System.out.println(queue);
+        System.out.println("Poll: " + queue.poll());
+        System.out.println(queue);
+        System.out.println(queue.remove());
+        System.out.println(queue);
+        System.out.println("****************************");
+
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.offer(1);
+        deque.offer(2);
+        System.out.println(deque);
+        System.out.println(deque.pollLast());
+        deque.push(3);
+        System.out.println(deque);
+
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(null);
+        list.add(2);
+        list.removeLastOccurrence(null);
+        System.out.println(list);
+    }
 }
